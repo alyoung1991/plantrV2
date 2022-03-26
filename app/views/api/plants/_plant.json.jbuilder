@@ -1,0 +1,1 @@
+json.extract! plant, :id, :family, :name, :age, :owner_id, :created_at, :last_watered
