@@ -1,5 +1,6 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Switch } from 'react-router';
+import { AuthRoute } from '../util/route_util';
 import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
@@ -10,10 +11,10 @@ const App = () => (
             <h1>Plantr</h1>
             <GreetingContainer />
         </header>
-        <Routes>
-            <Route path="/login" element={<LoginFormContainer />} />
-            <Route path="/signup" element={<SignupFormContainer />} />
-        </Routes>
+        <Switch>
+            <AuthRoute path="/login" component={LoginFormContainer} />
+            <AuthRoute path="/signup" component={SignupFormContainer} />
+        </Switch>
     </div>
 );
 
