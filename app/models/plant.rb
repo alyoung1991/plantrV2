@@ -14,4 +14,9 @@
 class Plant < ApplicationRecord
     belongs_to :owner,
         class_name: :User
+
+    def self.search_query_match(query)
+        query = query == nil ? "" : query
+        self.where("LOWER(name) LIKE ?", "%" + query.downcase + "%")
+    end
 end

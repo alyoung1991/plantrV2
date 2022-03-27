@@ -1,6 +1,6 @@
 class Api::PlantsController < ApplicationController
     def index
-        @plants = Plant.all
+        @plants = Plant.search_query_match(params[:query])
         render :index
     end
 

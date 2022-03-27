@@ -7,7 +7,7 @@ export const receievePlants = plants => ({
     plants
 });
 
-export const fetchPlants = () => dispatch => (
-    APIUtil.fetchPlants()
+export const fetchPlants = (query) => dispatch => (
+    APIUtil.fetchPlants(query)
         .then(plants => dispatch(receievePlants(plants)))
 );

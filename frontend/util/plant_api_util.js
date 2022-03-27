@@ -1,7 +1,7 @@
-export const fetchPlants = () => (
+export const fetchPlants = (data) => (
     $.ajax({
         method: 'GET',
         url: '/api/plants',
-        error: (err) => console.log(err)
+        data
     })
 );
