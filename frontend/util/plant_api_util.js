@@ -5,3 +5,11 @@ export const fetchPlants = (data) => (
         data
     })
 );
+
+export const createPlant = (plant) => (
+    $.ajax({
+        method: 'POST',
+        url: '/api/plants',
+        data: { plant }
+    })
+);

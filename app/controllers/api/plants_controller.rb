@@ -10,7 +10,8 @@ class Api::PlantsController < ApplicationController
     end
 
     def create
-        @plant = Plant.new(plant_params)
+        debugger
+        @plant = current_user.plants.new(plant_params)
 
         if @plant.save
             render :show
@@ -38,6 +39,7 @@ class Api::PlantsController < ApplicationController
     private
 
     def plant_params
-        params.require(:plants).permit(:type, :name, :age, :last_watered)
+        debugger
+        params.require(:plant).permit(:family, :name, :age, :last_watered)
     end
 end

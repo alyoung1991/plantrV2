@@ -3,7 +3,7 @@
 # Table name: plants
 #
 #  id           :bigint           not null, primary key
-#  type         :string           not null
+#  family       :string           not null
 #  name         :string           not null
 #  age          :integer          not null
 #  owner_id     :integer          not null
@@ -16,7 +16,6 @@ class Plant < ApplicationRecord
         class_name: :User
 
     def self.search_query_match(query)
-        query = query == nil ? "" : query
         self.where("LOWER(name) LIKE ?", "%" + query.downcase + "%")
     end
 end

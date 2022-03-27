@@ -6,10 +6,6 @@ class PlantIndex extends React.Component {
         super(props);
     }
 
-    componentDidMount(){
-        this.props.fetchPlants();
-    }
-
     render(){
         return (
             <div>
