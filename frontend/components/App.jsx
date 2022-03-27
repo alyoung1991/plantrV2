@@ -1,9 +1,10 @@
 import React from 'react';
-import { Switch } from 'react-router';
+import { Route, Switch } from 'react-router';
 import { AuthRoute } from '../util/route_util';
 import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
+import PlantIndexContainer from './plant_index/plant_index_container';
 
 const App = () => (
     <div>
@@ -12,8 +13,9 @@ const App = () => (
             <GreetingContainer />
         </header>
         <Switch>
-            <AuthRoute path="/login" component={LoginFormContainer} />
-            <AuthRoute path="/signup" component={SignupFormContainer} />
+            <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            <Route exact path="/plants" component={PlantIndexContainer} />
         </Switch>
     </div>
 );
